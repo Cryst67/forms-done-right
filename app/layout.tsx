@@ -2,6 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { Inter } from 'next/font/google';
+
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Forms Done Right',
@@ -15,8 +18,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body>
-        <ThemeProvider attribute='class' defaultTheme='light'>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+          storageKey='fdr-theme'
+        >
           {children}
         </ThemeProvider>
       </body>
