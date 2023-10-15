@@ -8,7 +8,12 @@ import { ArrowRight } from 'lucide-react';
 export default function Heading() {
   return (
     <div className='flex flex-col justify-center items-center gap-5 mt-56'>
-      <GradientHeading className='text-7xl font-bold py-3'>
+      <GradientHeading
+        fromColor='from-blue-600'
+        viaColor='via-green-600'
+        toColor='to-indigo-400'
+        className='text-7xl font-bold py-3'
+      >
         Forms Done Right
       </GradientHeading>
       <h3>Elegant and minimalist forms for all your data collection needs</h3>
